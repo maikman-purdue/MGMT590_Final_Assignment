@@ -1,0 +1,46 @@
+-- Create Training Set
+CREATE OR REPLACE TABLE `dsb-big-data.final_project_traffic.archival_trainingset` AS
+SELECT
+  *
+FROM
+  `dsb-big-data.final_project_traffic.archival`
+WHERE
+  RAND() < 0.8;
+
+-- Create Testing Set
+CREATE OR REPLACE TABLE `dsb-big-data.final_project_traffic.archival_testset` AS
+SELECT
+  *
+FROM
+  `dsb-big-data.final_project_traffic.archival`
+WHERE
+  RAND() >= 0.8;
+
+
+CREATE OR REPLACE MODEL `dsb-big-data.final_project_traffic.aadt_model`
+OPTIONS(model_type='linear_reg') AS
+SELECT
+  AADT_COMBO,
+  AADT_SU,
+  PCT_DH_COM,
+  PCT_DH_SIN,
+  D_FAC,
+  K_FAC,
+  AADT AS label
+FROM
+  `dsb-big-data.final_project_traffic.archival_trainingset`
+  
+  SELECT
+  *
+FROM
+  ML.EVALUATE(MODEL `dsb-big-data.final_project_traffic.aadt_model`,
+              (SELECT
+                 AADT_COMBO,
+                 AADT_SU,
+                 PCT_DH_COM,
+                 PCT_DH_SIN,
+                 D_FAC,
+                 K_FAC,
+                 AADT AS label
+               FROM
+                 `dsb-big-data.final_project_traffic.archival_testset`));
