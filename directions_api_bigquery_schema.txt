@@ -1,0 +1,77 @@
+[
+  {
+    "name": "start_address",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "end_address",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "start_lat",
+    "type": "FLOAT64",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "start_lng",
+    "type": "FLOAT64",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "end_lat",
+    "type": "FLOAT64",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "end_lng",
+    "type": "FLOAT64",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "summary",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "instruction",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "distance",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "duration",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "segment_start_lat",
+    "type": "FLOAT64",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "segment_start_lng",
+    "type": "FLOAT64",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "segment_end_lat",
+    "type": "FLOAT64",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "segment_end_lng",
+    "type": "FLOAT64",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "travel_mode",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  }
+]
